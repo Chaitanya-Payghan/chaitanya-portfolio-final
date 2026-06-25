@@ -1,0 +1,2 @@
+import { ArtCard, PageHero } from "../components";
+export default function GalleryPage(){return <main><PageHero eyebrow="Gallery" title="Cinematic milestones and future memories.">A visual wall for projects, events, achievements, memories, and the journey ahead.</PageHero><section className="galleryGrid pagePad">{Array.from({length:12},(_,i)=><ArtCard key={i} type={`gallery${i%8}`} label={`Milestone ${i+1}`}/>)}</section></main>}
