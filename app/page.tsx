@@ -2,20 +2,40 @@ import Link from "next/link";
 import { ArtCard } from "./components";
 import { posts, projects, roadmap, skills, values } from "./data";
 
+const stats = [
+  ["04", "Flagship project directions"],
+  ["08", "Core skills in progress"],
+  ["05", "Long-term roadmap milestones"],
+  ["∞", "Curiosity for research"]
+] as const;
+
+const researchAreas = ["AI Agents", "Large Language Models", "Human-centered AI", "Automation Systems", "Deep Learning", "AI Safety"];
+
 export default function Home() {
   return (
-    <main className="gridShell">
-      <section className="hero panel wide">
+    <main className="gridShell landingV2">
+      <section className="hero panel wide commandHero">
         <div className="constellation" />
-        <p className="hello">Hi, I&apos;m</p>
-        <h1>CHAITANYA</h1>
-        <h2>Future Artificial Intelligence Research Engineer <span>(AIRE)</span></h2>
-        <p className="path">JEE Aspirant → B.Tech CSE → MS AI/ML → PhD AI/ML → AI Research Engineer</p>
-        <div className="actions"><Link href="/roadmap">Explore My Journey</Link><Link href="/projects">View Projects</Link></div>
+        <div className="heroContent">
+          <p className="hello">Personal AI Headquarters</p>
+          <h1>CHAITANYA</h1>
+          <h2>Future Artificial Intelligence Research Engineer <span>(AIRE)</span></h2>
+          <p className="path">A cinematic portfolio for projects, learning, research ambition, and the mission to build intelligent systems that create meaningful impact.</p>
+          <div className="actions"><Link href="/roadmap">Explore My Journey</Link><Link href="/projects">View Projects</Link></div>
+        </div>
         <div className="portalMan" aria-label="Silhouette entering a glowing AI portal" />
       </section>
 
-      <section className="panel aboutPreview"><ArtCard label="AI" /><div><p className="eyebrow">About Me</p><h2>Curious Mind. Relentless Learner. Future <span>Builder.</span></h2><p>I’m Chaitanya, an ambitious learner on a mission to become an Artificial Intelligence Research Engineer. I love solving complex problems, building futuristic systems, and turning ideas into impactful technologies.</p><div className="valueGrid">{values.map(v => <article key={v}>♡<b>{v.split(' ')[0]}</b><small>{v}</small></article>)}</div></div></section>
+      <section className="panel missionBrief">
+        <p className="eyebrow">Signal</p>
+        <h2>Ambition shaped into discipline.</h2>
+        <p>I am building the foundation to move from student and builder to AI researcher: learning deeply, shipping projects, and documenting the journey with clarity.</p>
+        <div className="statGrid">{stats.map(([number, label]) => <article key={label}><strong>{number}</strong><span>{label}</span></article>)}</div>
+      </section>
+
+      <section className="panel aboutPreview"><ArtCard label="AI" /><div><p className="eyebrow">About Me</p><h2>Curious Mind. Relentless Learner. Future <span>Builder.</span></h2><p>I’m Chaitanya, an ambitious learner on a mission to become an Artificial Intelligence Research Engineer. I love solving complex problems, building futuristic systems, and turning ideas into impactful technologies.</p><div className="valueGrid">{values.map(v => <article key={v}>✦<b>{v.split(' ')[0]}</b><small>{v}</small></article>)}</div></div></section>
+
+      <section className="panel researchPanel"><p className="eyebrow">Research Direction</p><h2>Learning toward systems that think, assist, and empower.</h2><p>These are the areas I want to explore through projects, experiments, papers, and future higher studies.</p><div className="chipCloud">{researchAreas.map(area => <span key={area}>{area}</span>)}</div></section>
 
       <section className="panel visionPanel"><p className="eyebrow">Vision & Mission</p><h2>My Why. My Purpose. My Future.</h2><div className="visionGrid"><p><b>Vision</b><br />To contribute to the advancement of artificial intelligence and build AI systems that enhance human potential.</p><div className="brainOrb">♙</div><p><b>Mission</b><br />To continuously learn, research, innovate, and build intelligent systems that solve real-world problems.</p></div></section>
 
