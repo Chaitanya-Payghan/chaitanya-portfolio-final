@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description:
     "A cinematic multi-page personal headquarters for Chaitanya, a future Artificial Intelligence Research Engineer building intelligent systems and meaningful technology.",
   keywords: ["Chaitanya", "AI portfolio", "research engineer", "machine learning", "Next.js portfolio"],
+    "A cinematic personal headquarters for Chaitanya, a future Artificial Intelligence Research Engineer building intelligent systems and meaningful technology.",
+  keywords: ["Chaitanya", "AI", "portfolio", "research engineer", "machine learning", "projects"],
   openGraph: {
     title: "Chaitanya | Future AIRE",
     description: "Digital headquarters of a future Artificial Intelligence Research Engineer.",
@@ -22,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <Footer />
       </body>
+      <body>{children}</body>
     </html>
   );
 }
