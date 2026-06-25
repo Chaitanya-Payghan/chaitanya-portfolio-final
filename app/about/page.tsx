@@ -1,0 +1,3 @@
+import { ArtCard, PageHero } from "../components";
+import { values } from "../data";
+export default function AboutPage(){return <main><PageHero eyebrow="About Chaitanya" title="Curious mind. Relentless learner. Future builder.">A deeper profile of the ambition, discipline, values, and interests behind Chaitanya’s AI research journey.</PageHero><section className="subPageGrid"><ArtCard label="AIRE"/><div className="panel"><h2>My Story</h2><p>I am building myself toward a future in artificial intelligence research through disciplined learning, projects, and consistent problem solving.</p><div className="valueGrid">{values.map(v=><article key={v}>✦<b>{v}</b></article>)}</div></div></section></main>}
